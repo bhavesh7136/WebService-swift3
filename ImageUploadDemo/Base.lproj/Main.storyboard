@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wXw-ys-tFC">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="J6e-OE-ScM">
+            <objects>
+                <navigationController id="wXw-ys-tFC" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YHy-vy-Efx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="UYS-4I-mc2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5HE-Nu-49C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-578" y="123"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageUploadDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GiG-Mx-faI">
+                                <rect key="frame" x="0.0" y="64" width="375" height="199"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="199" id="12u-fZ-c1P"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heZ-Uz-Dpq">
+                                <rect key="frame" x="139.5" y="299" width="95" height="30"/>
+                                <state key="normal" title="Upload Image"/>
+                                <connections>
+                                    <action selector="btnUploadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wUt-dR-RZw"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DXm-mQ-VNg">
+                                <rect key="frame" x="31" y="367" width="313" height="2"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="heZ-Uz-Dpq" firstAttribute="top" secondItem="GiG-Mx-faI" secondAttribute="bottom" constant="36" id="CCT-8M-KdN"/>
+                            <constraint firstItem="DXm-mQ-VNg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="UdL-4f-jrE"/>
+                            <constraint firstAttribute="trailing" secondItem="GiG-Mx-faI" secondAttribute="trailing" id="We9-BL-KXM"/>
+                            <constraint firstItem="heZ-Uz-Dpq" firstAttribute="centerX" secondItem="GiG-Mx-faI" secondAttribute="centerX" id="iMY-H9-xgi"/>
+                            <constraint firstItem="GiG-Mx-faI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lON-ab-o0U"/>
+                            <constraint firstItem="GiG-Mx-faI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="tZO-a7-QZk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DXm-mQ-VNg" secondAttribute="trailing" constant="15" id="xuB-q1-Rko"/>
+                            <constraint firstItem="DXm-mQ-VNg" firstAttribute="top" secondItem="heZ-Uz-Dpq" secondAttribute="bottom" constant="38" id="yk1-ku-KVs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="iWa-7h-Otk"/>
+                    <connections>
+                        <outlet property="btnUpload" destination="heZ-Uz-Dpq" id="Z00-Lo-UKx"/>
+                        <outlet property="ivUpload" destination="GiG-Mx-faI" id="Nmd-rC-mDX"/>
+                        <outlet property="progressView" destination="DXm-mQ-VNg" id="KoR-Nr-l9B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
+        </scene>
+    </scenes>
+</document>
